@@ -202,7 +202,7 @@ body{font-family:'Noto Sans TC',sans-serif}
 <div class="footer">寫作佳句資料庫 · 每次投稿立即更新</div>
 
 <script>
-var CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRdi4UcSPAQp9Q_DRYGST3tk905ARwihqrlnMlssukztJWZPVrG3zfnI4MRu49h42sEjlVvWHLMiKQd/pub?gid=1571088456&single=true&output=csv';
+var CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRdi4UcSPAQp9Q_DRYGST3tk905ARwihqrlnMlssukztJWZPVrG3zfnI4MRu49h42sEjlVvWHLMiKQd/pub?output=csv';
 
 var allQuotes = [];
 var COLS = ['c0','c1','c2','c3','c4','c5'];
@@ -278,7 +278,7 @@ function switchTab(t){
   document.querySelector('.tab[onclick*="'+t+'"]').classList.add('active');
 }
 
-fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(CSV_URL + '&t=' + Date.now()))
+fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(CSV_URL))
   .then(function(r){return r.text()})
   .then(function(text){
     allQuotes=parseCSV(text);
