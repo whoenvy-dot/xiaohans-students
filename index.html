@@ -278,7 +278,7 @@ function switchTab(t){
   document.querySelector('.tab[onclick*="'+t+'"]').classList.add('active');
 }
 
-fetch('https://corsproxy.io/?' + encodeURIComponent(CSV_URL))
+fetch('https://api.allorigins.win/raw?url=' + encodeURIComponent(CSV_URL + '&t=' + Date.now()))
   .then(function(r){return r.text()})
   .then(function(text){
     allQuotes=parseCSV(text);
